@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+    <link href="/styles/styles.css" rel="stylesheet">
+<head>
+    <title>Edit Your Recipe</title>
+</head>
+
+<body>
+    <header class="header">
+        <a href="/index.html"><h1>RECIPES STORAGE SYSTEM</h1></a>
+    </header>
+    
+    <div class="container">
+        <input id="recipe-title" placeholder="Dish name">
+        <textarea id="recipe-body" placeholder="How to cook it?"></textarea>
+        <div>
+            <p>Ingredients</p>
+            <div id="ingredients"></div>
+            <form id="add-ingredient">
+                <input type="text" placeholder="What do you need?" name="addIngredient">
+                <button class="button">Add Ingredient</button>
+            </form>
+        </div>
+        <p>Danger zone</p>
+        <button id="remove-recipe" >Delete this recipe</button>
+    </div>
+
+    <script src="/scripts/edit-bundle.js"></script>
+</body>
