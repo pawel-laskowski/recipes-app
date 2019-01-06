@@ -3,22 +3,24 @@
 <html>
 
 <head>
+    
     <title>Recipes App</title>
+    <link href="styles/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Walter+Turncoat" rel="stylesheet">
 </head>
 
 <body>
     <header class="header">
-        <h1>RECIPES STORAGE SYSTEM</h1>
+        <a href="/index.html">Recipes Storage System</a>
     </header>
 
-    <div class="search">
-        <input type="text" id="search-text" class="input" placeholder="Filter recipes">
+    <div class="container">
+        <input type="text" id="search-text" class="filter-recipes" placeholder="Filter recipes">
+        <button id="add-recipe" class="add-recipe-button">Add Recipe</button>
     </div>
 
-    <div class="recipes-container">
-        <div id="recipes" class="recipes"></div>
-        <button id="add-recipe" class="button">Add Recipe</button>
-    </div>
+    <div id="recipes" class="recipes"></div>
+
 
     <script src="/scripts/index-bundle.js"></script>
 </body>
