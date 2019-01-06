@@ -6,9 +6,9 @@ let recipes = []
 const loadRecipes = () => {
     const recipesJSON = localStorage.getItem('recipes')
     try {
-        return recipesJSON ? JSON.parse(recipesJSON) : []
+        return recipesJSON ? recipes = JSON.parse(recipesJSON) : recipes = []
     } catch (e) {
-        return []
+        return recipes = []
     }
 }
 
@@ -18,7 +18,10 @@ const saveRecipes = () => {
 }
 
 // Expose recipes from module
-const getRecipes = () => recipes
+const getRecipes = () => {
+    recipes = loadRecipes()
+    return recipes
+} 
 
 // Create new recipe
 
@@ -118,6 +121,6 @@ const removeIngredient = (recipeId, ingredientId) => {
     }
 }
 
-recipes = loadRecipes()
+loadRecipes()
 
 export { createRecipe, getRecipes, removeRecipe, updateRecipe, addIngredient, ingredientsStatus, checkIngredient, removeIngredient }

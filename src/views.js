@@ -65,6 +65,7 @@ const generateIngredientDOM = (recipeId, ingredient) => {
     ingredientEl.appendChild(checkEl)
     checkEl.addEventListener('change', () => {
         checkIngredient(recipeId, ingredient.id)
+        initializeEditPage(recipeId)
     })
 
     // Setup the ingredient text
@@ -82,6 +83,7 @@ const generateIngredientDOM = (recipeId, ingredient) => {
     ingredientEl.appendChild(removeButton)
     removeButton.addEventListener('click', () => {
         removeIngredient(recipeId, ingredient.id)
+        initializeEditPage(recipeId)
     })
     return ingredientEl
 }
