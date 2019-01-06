@@ -9,7 +9,7 @@ document.querySelector('#add-recipe').addEventListener('click', (e) => {
     location.assign(`/edit.html#${id}`)
 })
 
-document.querySelector('#search-text').addEventListener('change', (e) => {
+document.querySelector('#search-text').addEventListener('input', (e) => {
     setFilters({
         searchText: e.target.value
     })
