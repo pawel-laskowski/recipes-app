@@ -1,30 +1,47 @@
 <!DOCTYPE html>
 
 <html>
-    <link href="/styles/styles.css" rel="stylesheet">
 <head>
+
     <title>Edit Your Recipe</title>
+    <link href="styles/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Walter+Turncoat" rel="stylesheet">
 </head>
 
 <body>
     <header class="header">
-        <a href="/index.html"><h1>RECIPES STORAGE SYSTEM</h1></a>
+        <a href="/index.html">RECIPES STORAGE SYSTEM</a>
     </header>
     
-    <div class="container">
-        <input id="recipe-title" placeholder="Dish name">
-        <textarea id="recipe-body" placeholder="How to cook it?"></textarea>
-        <div>
-            <p>Ingredients</p>
-            <div id="ingredients"></div>
-            <form id="add-ingredient">
-                <input type="text" placeholder="What do you need?" name="addIngredient">
-                <button class="button">Add Ingredient</button>
-            </form>
-        </div>
-        <p>Danger zone</p>
-        <button id="remove-recipe" >Delete this recipe</button>
+    <div class="container edit">
+        <p>Recipe Title</p>
+        <input id="recipe-title" class="edit-recipe-title" placeholder="Dish name">
     </div>
+
+    <div class="container edit">
+        <p>Instructions</p>
+        <textarea id="recipe-body" class="edit-recipe-body" placeholder="How to cook it?"></textarea>        
+    </div>
+
+    <div class="container edit">
+        <p>Ingredients</p>
+        <div id="ingredients"></div>
+
+        <div class="container add-ingredient">
+            <form id="add-ingredient">
+                <input type="text" class="add-ingredient-text" placeholder="What do you need?" name="addIngredient">
+                <button class="button add-ingredient-button">Add Ingredient</button>
+            </form>            
+        </div>
+
+    </div>
+
+    <div class="container">
+        <p>Danger zone</p>
+        <button id="remove-recipe">Delete this recipe</button>
+    </div>
+
+
 
     <script src="/scripts/edit-bundle.js"></script>
 </body>

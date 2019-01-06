@@ -33,9 +33,10 @@ addIngredientElement.addEventListener('submit', (e) => {
 })
 
 removeElement.addEventListener('click', () => {
-    // add some alert
-    removeRecipe(recipeId)
-    location.assign('/index.html')
+    if (confirm('Are you sure?')) {
+        removeRecipe(recipeId)
+        location.assign('/index.html')
+    }
 })
 
 window.addEventListener('storage', (e) => {

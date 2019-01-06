@@ -14,16 +14,16 @@ const generateRecipeDOM = (recipe) => {
     } else {
         titleEl.textContent = 'Unnamed dish'
     }
-    // titleEl.classList.add('')
+    titleEl.classList.add('recipe-title')
     recipeEl.appendChild(titleEl)
 
     // Setup the link to the edit page for recipe
     recipeEl.setAttribute('href', `/edit.html#${recipe.id}`)
-    // recipeEl.classList.add('')
+    recipeEl.classList.add('recipe')
 
     //Setup the message for ingredients status
     ingredientStatusEl.textContent = ingredientsStatus(recipe.id)
-    // ingredientStatusEl.classList.add
+    ingredientStatusEl.classList.add('recipe-status')
     recipeEl.appendChild(ingredientStatusEl)
 
     return recipeEl
@@ -62,7 +62,8 @@ const generateIngredientDOM = (recipeId, ingredient) => {
     // Setup ingredient checkbox
     checkEl.setAttribute('type', 'checkbox')
     checkEl.checked = ingredient.status
-    ingredientEl.appendChild(checkEl)
+    checkEl.classList.add('checkbox')
+    containerEl.appendChild(checkEl)
     checkEl.addEventListener('change', () => {
         checkIngredient(recipeId, ingredient.id)
         initializeEditPage(recipeId)
@@ -73,14 +74,14 @@ const generateIngredientDOM = (recipeId, ingredient) => {
     containerEl.appendChild(ingredientText)
 
     // Setup container
-    // ingredientEl.classList.add('list-item')
-    // containerEl.classList.add('list-item__container')
+    ingredientEl.classList.add('ingredient')
+    containerEl.classList.add('ingredient-container')
     ingredientEl.appendChild(containerEl)
 
     // Setup the delete button
     removeButton.textContent = 'Remove'
-    removeButton.classList.add('button', 'button--text')
-    ingredientEl.appendChild(removeButton)
+    removeButton.classList.add('button', 'remove-button')
+    containerEl.appendChild(removeButton)
     removeButton.addEventListener('click', () => {
         removeIngredient(recipeId, ingredient.id)
         initializeEditPage(recipeId)
